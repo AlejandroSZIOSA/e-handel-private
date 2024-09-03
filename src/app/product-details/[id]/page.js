@@ -1,5 +1,6 @@
 import React from "react";
 
+//Get Dynamic params
 export default function ProductDetailPage({ params }) {
   return (
     <main>
