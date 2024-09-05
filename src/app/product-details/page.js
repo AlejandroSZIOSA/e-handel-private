@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-//Dynamic Params
+//1-Dynamic Params Here
 export default function ProductsDetailsPage() {
   return (
     <main>
