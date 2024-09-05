@@ -3,18 +3,34 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
-  const [totalQuantityProducts, setTotalQuantityProducts] = useState(0);
+  const [cartInfo, setCartInfo] = useState({
+    userAccountId: 0,
+    totalProducts: 0,
+    transactionDate: "Date",
+  });
 
   return (
     <main>
       <h1>Home Page</h1>
       <p>
-        <Link href="/product-details"> Link To product Detail Page</Link>
+        <Link
+          href={{
+            pathname: "/product-details",
+            query: cartInfo,
+          }}
+        >
+          <button>To Product detail Page</button>
+        </Link>
       </p>
-      <h2>Increase Total product</h2>
-      <p>Total Products:{totalQuantityProducts}</p>
+      <h2>Increase Total products</h2>
+      <p>Total Products:{cartInfo.totalProducts}</p>
       <button
-        onClick={(e) => setTotalQuantityProducts(totalQuantityProducts + 1)}
+        onClick={() =>
+          setCartInfo({
+            ...cartInfo,
+            totalProducts: cartInfo.totalProducts + 1,
+          })
+        }
       >
         Increase Total products
       </button>
