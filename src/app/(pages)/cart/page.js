@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
+//3- Retrieve, update and send data back to the "Home page"
+
 export default function CartPage({ searchParams }) {
   const { totalProducts } = searchParams;
   const [newTotalProduct, setNewTotalProducts] = useState(
