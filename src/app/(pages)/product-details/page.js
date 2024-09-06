@@ -6,11 +6,10 @@ import Link from "next/link";
 
 export default function ProductsDetailsPage({ searchParams }) {
   const { totalProducts } = searchParams; //Destructuring
-  console.log(searchParams);
 
   return (
     <main>
-      <h1>Product details</h1>
+      <h1>Product details Page</h1>
       <p>
         <Link href={`product-details/${1}`}> To product 1</Link>
       </p>
@@ -19,6 +18,11 @@ export default function ProductsDetailsPage({ searchParams }) {
       </p>
       <h2>Retrieve Data</h2>
       <p>{totalProducts}</p>
+
+      <h2>Send Retrieved Data To "Home Page"</h2>
+      <p>
+        <Link href={{ pathname: "/", query: { totalProducts } }}> To Home</Link>
+      </p>
     </main>
   );
 }
